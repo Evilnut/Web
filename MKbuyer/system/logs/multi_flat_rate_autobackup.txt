@@ -1,0 +1,35 @@
+EXTENSION	SETTING	NUMBER	SUB-SETTING	SUB-NUMBER	SUB-SUB-SETTING	VALUE
+multi_flat_rate	charge	1	charges			0-149.99=9.99
+multi_flat_rate	charge	1	group			1
+multi_flat_rate	charge	1	rule	1	comparison	is
+multi_flat_rate	charge	1	rule	1	type	geo_zone
+multi_flat_rate	charge	1	rule	1	value	6
+multi_flat_rate	charge	1	rule	2	comparison	
+multi_flat_rate	charge	1	rule	2	type	total_value
+multi_flat_rate	charge	1	rule	2	value	prediscounted
+multi_flat_rate	charge	1	rule	3	comparison	
+multi_flat_rate	charge	1	rule	3	type	total_value
+multi_flat_rate	charge	1	rule	3	value	
+multi_flat_rate	charge	1	title_admin			
+multi_flat_rate	charge	1	title_en			
+multi_flat_rate	charge	1	title_zh_CN			
+multi_flat_rate	charge	1	type			flat
+multi_flat_rate	charge	2	charges			13.99
+multi_flat_rate	charge	2	group			2
+multi_flat_rate	charge	2	rule	1	comparison	is
+multi_flat_rate	charge	2	rule	1	type	geo_zone
+multi_flat_rate	charge	2	rule	1	value	5
+multi_flat_rate	charge	2	rule	3	comparison	
+multi_flat_rate	charge	2	rule	3	type	min
+multi_flat_rate	charge	2	rule	3	value	150
+multi_flat_rate	charge	2	title_admin			
+multi_flat_rate	charge	2	title_en			
+multi_flat_rate	charge	2	title_zh_CN			
+multi_flat_rate	charge	2	type			flat
+multi_flat_rate	heading_en					Shipping
+multi_flat_rate	heading_zh_CN					Shipping
+multi_flat_rate	sort_order					1
+multi_flat_rate	status					1
+multi_flat_rate	tax_class_id					9
+multi_flat_rate	testing_mode					1
+multi_flat_rate	tooltips					1

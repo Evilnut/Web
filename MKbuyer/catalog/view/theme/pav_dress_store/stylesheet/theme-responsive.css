@@ -1,0 +1,414 @@
+/* Large desktop */
+@media (min-width: 1200px) {
+    /* Code CSS here */
+}
+
+/*Ipad landscape*/
+
+@media only screen and (max-width: 979px) {
+
+#mainmenu {
+    margin-left: 0;
+    padding: 10px 0;
+    width: 100%;
+}
+.mainnav-inner {
+    position: relative;
+}
+
+#search {
+    width: 100%;
+    margin-bottom: 20px;
+}
+#search .search-title {
+	 display:  none;
+}
+#search .search-content {
+	 display:  block;
+	 top:0;
+}
+	
+/*menu*/
+#mainnav {
+	 min-height:  40px;
+	 background: none;
+}
+.navbar {
+	 margin-bottom: 0;
+}	
+.navbar-inner {
+	 margin-top: 0;
+}
+	.btn.btn-navbar {
+		float: left;
+		margin-left: 10px;
+		margin-bottom: 3px;
+		padding: 9px 8px;
+	}
+	.navbar-inner {
+		padding : 0 ;
+	}
+	.navbar .btn-navbar {
+		background: #d22753;
+	}
+	.nav-collapse .megamenu:after {
+		border-bottom: 10px solid #5F9A7B;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		content: "";
+		display: inline-block;
+		left: 16px;
+		position: absolute;
+		top: -15px;
+	}
+	.nav-collapse .megamenu:before {
+		border-bottom: 11px solid rgba(225, 225, 225, 0.2);
+		border-left: 11px solid transparent;
+		border-right: 11px solid transparent;
+		content: "";
+		display: inline-block;
+		left: 15px;
+		position: absolute;
+		top: -16px;
+	}
+	.nav-collapse .megamenu {
+		border-top: 5px solid #5F9A7B;
+		border-right: none;
+		border-left: none;
+		border-bottom: none;
+		box-shadow: 0 0 5px #999;
+		border-radius: 0;
+		background: #5F9A7B;
+		margin: 10px 0 0!important;
+	}
+	.nav-collapse .nav li.homepage a {
+	    background: none repeat scroll 0 0 transparent;
+		display: block;
+		overflow: hidden;
+		padding-left: 0;
+		text-indent: inherit;
+		width: auto;
+		padding-left: 15px;
+	}
+	.nav-collapse .nav > li{
+		background: none;
+	}
+	.nav-collapse .nav > li > a{
+		font-weight: normal;
+		color: #ffffff !important;
+		padding-top:0;
+		padding-bottom: 0;
+	}
+	.nav-collapse .dropdown-menu {
+		background: #518b6d;
+	}
+	.nav-collapse .nav > li > a:hover, .nav-collapse .nav > li > a:focus,
+	 .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus,
+	.nav-collapse .nav.megamenu  > li.open, .nav-collapse .nav.megamenu  > li:hover {
+		background: none repeat scroll 0 0 #6EAA8A;
+
+		color: #ffffff;
+	}
+	.nav-collapse .dropdown-menu li a {
+		color: #fff;
+		padding: 0;
+		font-weight: normal;
+	}
+	.nav-collapse .nav > li > .dropdown-menu:after {
+		border-bottom: 10px solid #518b6d;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		content: "";
+		display: inline-block;
+		left: 17px;
+		position: absolute;
+		top: 50px;
+	}
+	.nav-collapse .nav > li > .dropdown-menu:after {
+		border-bottom: 10px solid #518b6d;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		content: "";
+		display: inline-block;
+		left: 17px;
+		position: absolute;
+		top: 34px;
+	}
+	.nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus {
+		background: none!important;
+	}
+	/*logo*/
+	#header #logo {
+		 position: relative;
+		 text-align: center;
+		}
+
+/*cart-top*/
+	
+
+/*slideshow*/
+	
+
+/*produce*/
+	.box-produce .product-inner .name {
+    clear: both;
+}
+	.footer-top .row-fluid [class*="span"],
+	.product-info .row-fluid [class*="span"]{
+		width: 100%;
+		margin-left: 0;
+		display: inline-block;
+	}
+	.product-info .image-additional {
+		clear: none;
+	}
+	
+	#headertop .login{
+ /*    margin-left: 5px; */
+}
+#header .links {
+    margin-left: 0;
+}
+	.return-reason,.return-opened,.return-captcha,
+	.return-model,
+	.return-name {
+		 width:  97%;
+	}
+	.checkout-content .left {
+	width: 100%;
+}
+.checkout-content .right {
+	width: 100%;
+}
+.pav-promotion .box{
+	margin-bottom: 0;
+}
+	
+}
+/*Ipad Portrait*/
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+	.header-right {
+		width: 50%!important;
+	}
+	#pav-paneltool { display: none;}
+	#cart .content{
+		top: 138px;
+	}
+}
+
+
+/* Iphone 5 landscape */
+@media only screen and (max-width: 767px) {
+
+ 	#header .links {
+ 		/* float: right; */
+ 	}
+	#header #cart .heading h4 {
+		 font-size: 12px;
+	}
+	#header #logo {
+		text-align: center;
+	
+}
+
+	.box-produce .product-inner .name {
+    clear: none;
+}
+.pav-categoryproducts .tab-content {
+	 width:  60%!important;
+	 float: left!important;
+}
+.pav-categoryproducts .tab-content .product-block {
+	 width:  100%!important;
+}
+.pav-categoryproducts .product-block .image {
+	 float: none;
+}
+.pav-categoryproducts .tab-nav{
+	width:39.9%!important;
+	 float: left!important;
+}
+.pav-categoryproducts .tab-nav ul {
+    margin-left: 1px;
+}
+
+	
+	/*Table*/
+    table{
+        width:100%;
+    }
+    table .price{
+        margin: 0;
+    }
+    table td, table th{
+        display:block;
+        float:none;        
+        text-align: left !important;
+        vertical-align: middle !important;
+        overflow: hidden;
+    }
+    table.radio td, table.radio th {
+    display: inline-block;
+    overflow: visible;
+}
+    table td.image, table th.image{
+        text-align: center !important;
+    }
+    table span.phone{
+        color: #333333;
+        font-size: 13px;
+        float: left;        
+    }
+    table td .avg-right{
+        text-align: right;
+        float: right;
+    }
+    table td.quantity span.phone{
+        padding: 5px 10px 0 0;
+    }   
+    table.radio tr td:first-child{
+        width: auto;
+    }
+    .mini-cart-total table td, .mini-cart-total table th,
+    .mini-cart-info table td, .mini-cart-info table th {
+    	 display: inline-block;
+        text-align: right!important;
+    }
+	
+.mini-cart-info .image {
+	width: 50px;
+}
+h1.title-category {
+    display: none;
+}
+
+}
+@media only screen and (min-width: 600px) and (max-width: 766px) {
+	.product-related [class*="span"], .product-related .row-fluid [class*="span"],
+	.product-grid [class*="span"], .product-grid .row-fluid [class*="span"],
+	.box-product [class*="span"], .box-product .row-fluid [class*="span"] {
+		float:  left;
+		width: 31.9149%;
+		margin-left:2.12766%;
+	}
+	.box-product .row-fluid [class*="span"]:first-child,
+	.product-related .row-fluid [class*="span"]:first-child,
+	.product-grid .row-fluid [class*="span"]:first-child {
+    margin-left: 0;    
+}
+		.pav-promotion .pav-static li{
+		width: 47%;
+		margin-right: 2%
+	}
+	#cart .content{
+		top: 138px;
+	}
+	
+	#header #cart .content {
+    min-width: 230px;
+    top:245px;
+	}
+	.sidebar .pav-custom{
+		display: none;
+	}
+}
+ @media only screen and (max-width: 599px){
+ 	.pav-slideshow {
+ 		 display: none;
+ 	}
+	.header-right {
+		margin:  0;
+		float:  left;
+	}
+	.cart-top.pull-right {
+    float: left;
+	}
+
+#header #search input {
+    float: left;
+}
+	#header #cart {
+    top: inherit;
+    margin-bottom: 10px;
+    width: 100%;
+
+	}
+	.product-list .product-block .image {
+		width: 100%;
+	}
+
+}
+ @media only screen and (min-width: 480px) and (max-width: 599px) {
+		.pav-promotion .pav-static li{
+		width: 47%;
+		margin-right: 2%
+	}
+}
+@media only screen and (max-width: 480px){
+
+#cart .content:before{
+	right: 185px;
+}
+.group-action .cart .button{
+	padding-right: 55px;
+}
+.jcarousel {
+	display:  none;
+}
+.mini-cart-info .image {
+	width: 1px;
+}
+.pav-categoryproducts .product-block .description {
+	 display:  none;
+}
+#search .search-content {
+    display: block;
+    padding: 10px 5px 10px 0;
+    top: 0;
+    width: 200px;
+}
+#search input {
+    width: 68%;
+}
+#search .button-search {
+	font-size: 12px;
+}
+.carousel-controls{
+	top:2px;
+}
+#pav-mass-bottom .container-inner,
+.footer-center .container-inner,
+#powered .container-inner{
+	padding: 0 10px;
+}
+ 	#header #cart .content {
+    top:245px;
+}
+
+}
+@media only screen and (max-width: 380px){
+	#headertop .login-content {
+	 width: 255px;
+	 }
+ 	#header #cart .content {
+    min-width: 230px;
+    top:282px;
+}
+ }
+/* Iphone 4 landscape */
+@media only (min-width: 320px) and (max-width: 480px) {
+	#header #cart .content {
+    top:282px;
+	}
+	.sidebar .pav-custom{
+		display: block !important;
+	}
+}
+
+
+/* Iphone 4 + 5 Portrait */
+@media only screen and (min-width: 240px) and (max-width: 320px) {
+	
+}
+}

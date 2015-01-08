@@ -1,0 +1,162 @@
+a:hover, a:focus {
+    color: #729e34;
+}
+
+.pavblog-latest .blog-item .blog-title a:hover,
+.pav-blog ul.list li a:hover {
+    color: #729e34;
+}
+
+.breadcrumb a:last-child {
+    color: #729e34;
+}
+
+.copyright a {
+    color: #729e34;
+}
+
+.nav .dropdown-toggle:hover .caret,
+.nav .dropdown-toggle:focus .caret {
+  border-top-color: #729e34;
+  border-bottom-color: #729e34;
+}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+    background-color:#729e34; 
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus
+{
+  color: #729e34;
+}
+.product-filter .display > span,
+.product-block .price
+ {
+  color: #729e34;
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  color: #729e34;
+}
+
+
+#off-canvas-nav li .menu-title:hover{
+  color: #729e34;
+}
+.dropdown-menu li > a:hover, 
+.dropdown-menu li > a:focus {
+    color: #729e34;
+}
+.dropdown .dropdown-menu li a:hover{
+  background-position: 0 -97px;
+}
+.megamenu .mega-group > a .menu-title:hover,
+.dropdown .dropdown-menu li a:hover{
+  color: #729e34;
+}
+.pav-promotion .pav-static li:hover,
+.producttabs .tab-nav .active > a, .producttabs .tab-nav li:hover > a,
+.product-label-special,
+.productcarousel h3.box-heading > span {
+    background: none repeat scroll 0 0 #729e34;
+}
+
+#headertop .login,
+#currency a b ,#cart-total,#header .login.open a.login-icon,
+ul.list li:hover a,.list-menu li a:hover,
+ul.box-category > li a.active {
+    color: #729e34;
+}
+.bloglatest .box-heading span{
+  color: #729e34;
+}
+.addition-actions #button-cart:hover,
+.product-info .addition-actions .button-cart:hover,
+.product-block  .product-meta .cart .button:hover {
+    color: #729e34; 
+}
+.cart-info .quantity-adder .add-action:hover {
+    background: none repeat scroll 0 0 #729e34;
+}
+.product-info-item h2 span.icon {
+    background-color: #729e34;
+}
+
+.sidebar .product-block .name a:hover,
+.product-block .name a:hover,
+.product-info .price,
+.product-list .product-block .price-new,
+.product-list .product-block .name a:hover{
+  color: #729e34;
+}
+.box.highlight .box-heading,
+.product-compare a:hover{
+    background: none repeat scroll 0 0 #729e34;
+}
+#cart .heading{
+  background-position: 0 -179px;
+}
+#cart .content:before {
+    border-bottom: 11px solid #729e34;
+}
+
+#cart .content-inner {
+    border-top: 6px solid #729e34;
+}
+#headertop .login, #currency a b,
+#cart-total, #header .login.open a.login-icon, ul.list li:hover a, .list-menu li a:hover,
+{
+    color: #729e34;
+}
+
+.product-related .title-related {
+    background: #729e34;
+    }
+.product-info .image-additional .carousel-control:hover {
+      background-color: #729e34!important;
+  }
+
+    .checkout > a,
+a.button, input.button,
+button.btn-submit {
+    background: #729e34;
+  }
+
+.pagination .links b {
+    color: #729e34;
+     border: 1px solid #729e34;
+  }
+ .carousel-controls a.left:hover{
+  background-position: 0 -88px;
+  }
+ .carousel-controls a.right:hover {
+    background-position: -25px -88px;
+}
+.tp-caption.bg_orange:hover {
+    background-color: #729e34;
+}
+.tp-leftarrow:hover, .tp-rightarrow:hover {
+    background-position: left -177px;
+}
+
+.product-filter .display a.grid:hover, .product-filter .display a.grid.active {
+    background-position: 10px -89px;
+}
+
+.product-filter .display a.list:hover, .product-filter .display a.list.active {
+    background-position: -27px -89px;
+}
+.sidebar ul li a.active, .sidebar ul li a:hover,
+ul.list li:hover {
+    background-position: 0 -266px;
+}
+
+.navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, 
+.navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
+    background-color: #729e34!important;
+}
+.navbar .btn-navbar {
+    background:none repeat scroll 0 0 #3f4249 !important;
+}

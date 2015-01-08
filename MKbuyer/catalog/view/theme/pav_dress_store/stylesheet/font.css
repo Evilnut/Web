@@ -1,0 +1,10 @@
+@font-face {
+ font-family: 'RobotoCondensed';
+ src: url('../font/RobotoCondensed.eot');
+ src: url('../font/RobotoCondensed.otf') format('otf'), 
+   url('../font/RobotoCondensed.ttf') format('truetype'), 
+   url('../font/Dekar.svg') format('svg'),
+   url('../font/Dekar.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+}

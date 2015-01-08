@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>Multi-Store Flat-Rate Shipping Costs</id>
+    <version>1.0.0</version>
+    <vqmver>1.0.9</vqmver>
+    <author>E-shops extensions</author>
+    <!-- Controller -->
+    <file name="admin/controller/shipping/flat.php">
+        <operation>
+            <search position="before"><![CDATA[if (isset($this->request->post['flat_cost'])) {]]>
+            </search>
+            <add>
+                    <![CDATA[        $this->load->model('setting/store');
+                    
+                    
+                $this->data['stores'] = $this->model_setting_store->getStores();
+                $array = array();
+                foreach($this->data['stores'] as $store)
+                {
+                     if (isset($this->request->post['flat_cost_'.$store['store_id']])) {
+			$this->data['flat_cost_'.$store['store_id']] = $this->request->post['flat_cost_'.$store['store_id']];
+                    } else {
+                            $setting = $this->model_setting_setting->getSetting('flat', $store['store_id']);
+                            $array[$store['store_id']]['flat_cost'] = $setting['flat_cost'];
+                    }
+                    
+                    if (isset($this->request->post['flat_tax_class_id_'.$store['store_id']])) {
+			$this->data['flat_tax_class_id'] = $this->request->post['flat_tax_class_id_'.$store['store_id']];
+                        } else {
+                            $setting = $this->model_setting_setting->getSetting('flat', $store['store_id']);
+                            $array[$store['store_id']]['flat_tax_class_id'] = $setting['flat_tax_class_id'];
+                        }
+                        
+                    if (isset($this->request->post['flat_geo_zone_id_'.$store['store_id']])) {
+			$this->data['flat_geo_zone_id'] = $this->request->post['flat_geo_zone_id_'.$store['store_id']];
+                    } else {
+                            $setting = $this->model_setting_setting->getSetting('flat', $store['store_id']);
+                            $array[$store['store_id']]['flat_geo_zone_id'] = $setting['flat_geo_zone_id'];
+                    }
+                    
+                    if (isset($this->request->post['flat_status_'.$store['store_id']])) {
+			$this->data['flat_status'] = $this->request->post['flat_status_'.$store['store_id']];
+                    } else {
+                            $setting = $this->model_setting_setting->getSetting('flat', $store['store_id']);
+                            $array[$store['store_id']]['flat_status'] = $setting['flat_status'];
+                    }
+
+                    if (isset($this->request->post['flat_sort_order_'.$store['store_id']])) {
+                            $this->data['flat_sort_order'] = $this->request->post['flat_sort_order_'.$store['store_id']];
+                    } else {
+                            $setting = $this->model_setting_setting->getSetting('flat', $store['store_id']);
+                            $array[$store['store_id']]['flat_sort_order'] = $setting['flat_sort_order'];
+                    }	
+                    $this->data['store_array'] = $array;
+                }
+                ]]>
+            </add>    
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[$this->model_setting_setting->editSetting('flat', $this->request->post);]]>
+            </search>
+            <add>
+                    <![CDATA[        $this->load->model('setting/store');
+                $stores = $this->model_setting_store->getStores();
+                foreach($stores as $store)
+                {
+                    $arrayOld = $this->request->post;
+                 
+                    $arrayNew['flat_cost'] = $arrayOld['flat_cost_'.$store['store_id']];
+                    $arrayNew['flat_tax_class_id'] = $arrayOld['flat_tax_class_id_'.$store['store_id']];
+                    $arrayNew['flat_geo_zone_id'] = $arrayOld['flat_geo_zone_id_'.$store['store_id']];
+                    $arrayNew['flat_status'] = $arrayOld['flat_status_'.$store['store_id']];
+                    $arrayNew['flat_sort_order'] = $arrayOld['flat_sort_order_'.$store['store_id']];
+                    
+                    $this->model_setting_setting->editSetting('flat', $arrayNew, $store['store_id']);
+                    
+                    unset($this->request->post['flat_cost_'.$store['store_id']]);
+                    unset($this->request->post['flat_tax_class_id_'.$store['store_id']]);
+                    unset($this->request->post['flat_geo_zone_id_'.$store['store_id']]);
+                    unset($this->request->post['flat_status_'.$store['store_id']]);
+                    unset($this->request->post['flat_sort_order_'.$store['store_id']]);
+                }
+                
+                $this->model_setting_setting->editSetting('flat', $this->request->post);
+              
+                ]]>
+            </add>    
+        </operation>
+        
+    </file>
+    <!-- View -->
+    <file name="admin/view/template/shipping/flat.tpl">
+         <operation>
+            <search position="replace"><![CDATA[<table class="form">]]>
+            </search>
+             <add>
+                    <![CDATA[<table class="form" style="display: none;">]]>
+             </add>
+         </operation>
+        <operation>
+            <search position="replace"><![CDATA[<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">]]>
+            </search>
+            <add>
+                    <![CDATA[      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
+        
+                                    <table class="form">
+                    <thead>
+                        <td>Webshop</td>
+                        <td><?php echo $entry_cost; ?></td>
+                        <td><?php echo $entry_tax_class; ?></td>
+                        <td><?php echo $entry_geo_zone; ?></td>
+                        <td><?php echo $entry_status; ?></td>
+                        <td><?php echo $entry_sort_order; ?></td>
+                    </thead>
+                    <tr>
+                    
+                        <td><?php echo $this->config->get('config_name'); ?></td>
+                        <td><?php
+    echo '<input type="text" name="flat_cost" value="' . $flat_cost . '" />';
+    ?></td>
+                         
+                    <td><select name="flat_tax_class_id">
+                            <option value="0"><?php echo $text_none; ?></option>
+<?php foreach ($tax_classes as $tax_class) { ?>
+    <?php if ($tax_class['tax_class_id'] == $flat_tax_class_id) { ?>
+                                    <option value="<?php echo $tax_class['tax_class_id']; ?>" selected="selected"><?php echo $tax_class['title']; ?></option>
+                  <?php } else { ?>
+                  <option value="<?php echo $tax_class['tax_class_id']; ?>"><?php echo $tax_class['title']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select></td>
+                        
+                                  
+                    <td><select name="flat_geo_zone_id">
+                            <option value="0"><?php echo $text_all_zones; ?></option>
+<?php foreach ($geo_zones as $geo_zone) { ?>
+    <?php if ($geo_zone['geo_zone_id'] == $flat_geo_zone_id) { ?>
+                                    <option value="<?php echo $geo_zone['geo_zone_id']; ?>" selected="selected"><?php echo $geo_zone['name']; ?></option>
+    <?php } else { ?>
+                                    <option value="<?php echo $geo_zone['geo_zone_id']; ?>"><?php echo $geo_zone['name']; ?></option>
+                                <?php } ?>
+                            <?php } ?>
+                        </select></td>
+                       
+                        <td><select name="flat_status">
+                <?php if ($flat_status) { ?>
+                <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                <option value="0"><?php echo $text_disabled; ?></option>
+                <?php } else { ?>
+                <option value="1"><?php echo $text_enabled; ?></option>
+                <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                <?php } ?>
+              </select></td>
+                    
+                        <td><input type="text" name="flat_sort_order" value="<?php echo $flat_sort_order; ?>" size="1" /></td>
+                    </tr>
+                    <?php
+                    $store_flat_total = 0;
+                    foreach ($stores as $store) {
+               
+                        ?>
+                        <tr><td><?php echo $store['name']; ?>
+                        <?php
+                        echo '<td><input type="text" name="flat_cost_' . $store['store_id'] . '" value="' . $store_array[$store['store_id']]['flat_cost'] . '" /></td>';
+                        $store_flat_total++;
+                        
+                        ?></td>
+                         <td><select name="flat_tax_class_id_<?php echo $store['store_id'];?>">
+                            <option value="0"><?php echo $text_none; ?></option>
+ <?php foreach ($tax_classes as $tax_class) { ?>
+     <?php if ($tax_class['tax_class_id'] == $store_array[$store['store_id']]['flat_tax_class_id']) { ?>
+                                    <option value="<?php echo $tax_class['tax_class_id']; ?>" selected="selected"><?php echo $tax_class['title']; ?></option>
+                  <?php } else { ?>
+                  <option value="<?php echo $tax_class['tax_class_id']; ?>"><?php echo $tax_class['title']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select></td>
+                        
+                         <td><select name="flat_geo_zone_id_<?php echo $store['store_id'];?>">
+                            <option value="0"><?php echo $text_all_zones; ?></option>
+<?php foreach ($geo_zones as $geo_zone) { ?>
+    <?php if ($geo_zone['geo_zone_id'] == $store_array[$store['store_id']]['flat_geo_zone_id']) { ?>
+                                    <option value="<?php echo $geo_zone['geo_zone_id']; ?>" selected="selected"><?php echo $geo_zone['name']; ?></option>
+    <?php } else { ?>
+                                    <option value="<?php echo $geo_zone['geo_zone_id']; ?>"><?php echo $geo_zone['name']; ?></option>
+                                <?php } ?>
+                            <?php } ?>
+                        </select></td>
+                        
+                        <td><select name="flat_status_<?php echo $store['store_id'];?>">
+<?php if ($store_array[$store['store_id']]['flat_status']) { ?>
+                                    <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                                    <option value="0"><?php echo $text_disabled; ?></option>
+<?php } else { ?>
+                                    <option value="1"><?php echo $text_enabled; ?></option>
+                                    <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+<?php } ?>
+                            </select></td>
+                    
+                        <td><input type="text" name="flat_sort_order_<?php echo $store['store_id'];?>" value="<?php echo $flat_sort_order; ?>" size="1" /></td>
+                        
+                        </tr><?php
+                    }
+                    ?> 
+
+                  </table>
+      </form>]]>
+            </add>    
+        </operation>
+    </file>
+    <!-- Language -->
+</modification>
