@@ -171,9 +171,8 @@ Please donate via PayPal to donate@opencart.com
 	<div class="container">
 		<div class="container-inner">
 			<div class="row-fluid">
-				<div class="copyright span10">
-				
-				Design By <a href="http://www.evilnut.ca" title="pavethemes - opencart themes clubs">Evilnut Creative Technology</a>
+				<div class="copyright span10" style="margin-top:10px;">
+				Powered By <a href="http://www.evilnut.ca" title="Evilnut Creative Technology">Evilnut Creative Technology</a>
 				</div>
 				<div class="span2"><div class="paypal" style="text-align: right;margin: 15px 0;"><img src="image/data/paypal.png" alt=""></div></div>
 		</div>
@@ -189,4 +188,13 @@ Please donate via PayPal to donate@opencart.com
 	<?php include( dirname(__FILE__).'/addon/panel.tpl' );?>
 <?php } ?>
 </section>
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//v2.zopim.com/?2huuRmoBqsdoeYkpXNWjZzFHQrVXDlUB';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zopim Live Chat Script-->
 </body></html>

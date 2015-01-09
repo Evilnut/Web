@@ -134,7 +134,7 @@ ul.list li  {
 }
 ul.list li a {
     display: block;
-    color: #b9bcbd;
+    color: #ffffff;
 }
 ul.list li:hover a {
     color: #d32f58;
@@ -557,7 +557,7 @@ ul.list li:hover a {
 }
 /*mainnav*/
 #mainnav {
-	background: #292628;
+	background: #c62064;
 }
 .navbar-inner {
 	background: none;
@@ -2227,8 +2227,8 @@ h1.title-category {
 }
 /* footer */ 
 #footer {
-		background: url(../image/default/footer-bg.png) repeat left top scroll;
-		color: #969ea1;
+		background: #e7669a;
+		color: #ffffff;
 	}
 	#footer .box-heading h3 {
 		padding-right: 0;
@@ -2285,7 +2285,7 @@ h1.title-category {
 }
 
 #powered .container-inner {
-	padding: 20px 0 20px;
+	/*padding: 20px 0 20px;*/
 	
 }
 .copyright {
